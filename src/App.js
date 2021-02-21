@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Container } from '@material-ui/core';
+import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import Body from './components/Body';
 import Cart from './components/Cart';
+import Details from './components/Details';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 
@@ -36,9 +39,7 @@ function App() {
 
 	function removeProductFromCart(product) {
 		if (product.quantity === 1) {
-			setCartItems((prevState) =>
-				prevState.filter((elem) => elem.id !== product.id)
-			);
+			deleteProductFromCart(product);
 		} else {
 			setCartItems((prevState) =>
 				prevState.map((elem) =>
@@ -55,25 +56,65 @@ function App() {
 		setTotalItemsInCart((prevState) => prevState - 1);
 	}
 
+	function deleteProductFromCart(product) {
+		setCartItems((prevState) =>
+			prevState.filter((elem) => elem.id !== product.id)
+		);
+	}
+
 	useEffect(() => {
 		fetch('https://api.jsonbin.io/b/602f1acabd6b755d01997850/2')
 			.then((res) => res.json())
 			.then((data) => setProductData(data));
 	}, []);
 
+	useEffect(() => {
+		setTotalItemsInCart(
+			cartItems.reduce((acc, elem) => acc + elem.quantity, 0)
+		);
+	}, [cartItems]);
+
 	return (
-		<div className="App">
-			<Navbar totalItemsInCart={totalItemsInCart} />
-			<div className="container">
-				<Body productData={productData} addToCart={addToCart} />
-				{/* <Cart
-					cartItems={cartItems}
-					addToCart={addToCart}
-					totalPrice={totalPrice}
-					removeProductFromCart={removeProductFromCart}
-				/> */}
-			</div>
-		</div>
+		<Router>
+			<Switch>
+				<div className="App">
+					<Navbar totalItemsInCart={totalItemsInCart} />
+					<Container
+						maxWidth="lg"
+						style={{
+							backgroundColor: '#292929',
+							marginTop: '1em',
+							padding: '1em',
+						}}
+					>
+						<Route
+							exact
+							path="/"
+							render={() => (
+								<Body productData={productData} addToCart={addToCart} />
+							)}
+						/>
+						<Route
+							path="/item/:id"
+							render={(props) => <Details {...props} addToCart={addToCart} />}
+						/>
+						<Route
+							path="/cart"
+							render={(props) => (
+								<Cart
+									{...props}
+									cartItems={cartItems}
+									addToCart={addToCart}
+									totalPrice={totalPrice}
+									removeProductFromCart={removeProductFromCart}
+									deleteProductFromCart={deleteProductFromCart}
+								/>
+							)}
+						/>
+					</Container>
+				</div>
+			</Switch>
+		</Router>
 	);
 }
 
