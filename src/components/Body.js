@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Container, Grid } from '@material-ui/core';
 import Product from './Product';
 
 export default function Body({ productData, addToCart }) {
 	return (
-		<main className="body">
-			<h2>Productos</h2>
-			<div className="products-container">
+		<Container
+			maxWidth="lg"
+			style={{ backgroundColor: '#292929', marginTop: '1em', padding: '1em' }}
+		>
+			<Grid container spacing={1}>
 				{productData.map((product) => (
-					<div
-						key={product.id}
-						style={{ border: '1px solid black', padding: 5 }}
-					>
+					<Grid item xs={6} sm={4} md={3} lg={2} key={product.id}>
 						<Product product={product} addToCart={addToCart} />
-					</div>
+					</Grid>
 				))}
-			</div>
-		</main>
+			</Grid>
+		</Container>
 	);
 }
