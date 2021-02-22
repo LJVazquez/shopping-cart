@@ -111,7 +111,7 @@ export default function Details(props) {
 								</div>
 							</Grid>
 							<Grid item>
-								{title ? (
+								{title && (
 									<Button
 										variant="text"
 										style={{ color: '#FFF' }}
@@ -122,8 +122,6 @@ export default function Details(props) {
 									>
 										Add to cart
 									</Button>
-								) : (
-									''
 								)}
 							</Grid>
 						</Grid>
