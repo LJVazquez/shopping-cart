@@ -4,7 +4,8 @@
 
 ### Description
 
-A demo shopping cart application made with React.
+A shopping cart application demo made with React.
+[Live preview](https://ljvazquez.github.io/shopping-cart)
 
 ### Features
 
