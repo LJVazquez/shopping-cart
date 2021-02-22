@@ -4,9 +4,10 @@ import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import Body from './components/Body';
 import Cart from './components/Cart';
-import Details from './components/Details';
+import DetailsCard from './components/DetailsCard';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
+import UnderConstruction from './components/UnderConstruction';
 
 function App() {
 	const [productData, setProductData] = useState([]);
@@ -96,7 +97,9 @@ function App() {
 						/>
 						<Route
 							path="/item/:id"
-							render={(props) => <Details {...props} addToCart={addToCart} />}
+							render={(props) => (
+								<DetailsCard {...props} addToCart={addToCart} />
+							)}
 						/>
 						<Route
 							path="/cart"
@@ -111,6 +114,7 @@ function App() {
 								/>
 							)}
 						/>
+						<Route path="/under-construction" render={UnderConstruction} />
 					</Container>
 				</div>
 			</Switch>
