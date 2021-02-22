@@ -4,7 +4,7 @@
 
 ### Description
 
-A shopping cart application demo made with React.
+Fortnite themed shopping cart application demo made with React.
 [Live preview](https://ljvazquez.github.io/shopping-cart)
 
 ### Features
