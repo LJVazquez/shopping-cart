@@ -1,23 +1,26 @@
 # shopping-cart
+Fully responsive fortnite themed shopping cart application demo made with React. 
+
+![Desktop Version](https://i.imgur.com/PWogKVI.jpg)
+
+![Mobile version](https://i.imgur.com/LT9JlyW.jpg)
 
 ## Project Overview
+Fortnite themed shopping cart application demo made with React.  [Click here for live preview](https://ljvazquez.github.io/shopping-cart)
 
-### Description
+### [](https://github.com/LJVazquez/shopping-cart#features)Features
 
-Fortnite themed shopping cart application demo made with React.
-[Live preview](https://ljvazquez.github.io/shopping-cart)
+-   Add and remove products from the shopping cart
+-   Responsive design
 
-### Features
+### Objectives & Outcomes
+Learning how to use react-router-dom and React hooks and states by Building a single page cart App.
 
-- Minimal UI
-- Add and remove products from the shopping cart
-- Responsive design
+## [](https://github.com/LJVazquez/shopping-cart#development)Development
 
-## Development
+### Frameworks, libraries and tools:
 
-### Frameworks, libraries and tools used:
-
-- React
-- React Router
-- Material UI
-- Adobe Photoshop
+-   [React Js](https://reactjs.org/)  - Front End JS framework
+-   [Material UI](https://material-ui.com/)  - Material design component library for React
+-   [Github Pages](https://pages.github.com/)  - Hosting
+-   [React Router](https://reactrouter.com/web/guides/quick-start)  - Router tool for React applications
