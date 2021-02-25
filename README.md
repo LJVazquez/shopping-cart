@@ -5,8 +5,9 @@ Fully responsive fortnite themed shopping cart application demo made with React.
 
 ![Mobile version](https://i.imgur.com/LT9JlyW.jpg)
 
+[Click here for live preview](https://ljvazquez.github.io/shopping-cart)
+
 ## Project Overview
-Fortnite themed shopping cart application demo made with React.  [Click here for live preview](https://ljvazquez.github.io/shopping-cart)
 
 ### [](https://github.com/LJVazquez/shopping-cart#features)Features
 
